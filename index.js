@@ -1,4 +1,7 @@
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
 // Require the necessary discord.js classes
+
 const fs = require('node:fs');
 const path = require('node:path');
 const {

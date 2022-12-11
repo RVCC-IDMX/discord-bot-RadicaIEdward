@@ -1,3 +1,6 @@
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
+
 const { REST, Routes } = require('discord.js');
 const fs = require('node:fs');
 const { clientId, guildId, token } = require('./config.json');
