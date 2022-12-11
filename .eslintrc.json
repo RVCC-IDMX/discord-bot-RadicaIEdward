@@ -16,5 +16,6 @@
       "error",
       "unix"
     ]
-  }
+  },
+  "root": true
 }
