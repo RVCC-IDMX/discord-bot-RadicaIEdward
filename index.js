@@ -5,7 +5,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const {
-  Client, Events, Collection, GatewayIntentBits,
+  Client, Events, Collection, GatewayIntentBits, EmbedBuilder,
 } = require('discord.js');
 const { token } = require('./config.json');
 
@@ -50,6 +50,23 @@ client.on(Events.InteractionCreate, async (interaction) => {
   } catch (error) {
     console.error(error);
     await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+  }
+});
+
+client.on(Events.InteractionCreate, async (interaction) => {
+  if (!interaction.isButton()) return;
+  console.log(interaction);
+
+  const botEmbed = new EmbedBuilder()
+    .setColor(0x0099FF)
+    .setTitle('This is an EMBEDDED... thing.')
+    .setURL('https://github.com/RVCC-IDMX/discord-bot-RadicaIEdward');
+
+  try {
+    await interaction.reply({ embeds: [botEmbed] });
+  } catch (error) {
+    console.error(error);
+    await interaction.reply({ content: 'There was an error while executing this embed!', ephemeral: true });
   }
 });
 
